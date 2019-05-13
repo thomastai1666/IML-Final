@@ -1,0 +1,86 @@
+<!--
+ Copyright (c) 2018 ml5
+ This software is released under the MIT License.
+ https://opensource.org/licenses/MIT
+-->
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Magic Violin</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+  <script src="/js/music@1.3.1.js"></script>
+  <script src="https://unpkg.com/ml5@0.2.2/dist/ml5.min.js" type="text/javascript"></script>
+</head>
+
+<body>
+
+  <div class="splash">
+      <h1>ANYONE CAN MAKE MUSIC</h1>
+    <img id="violin" src="img/violin.png" alt="Violin">
+    <img id="violinbow" src="img/violinbow.png" alt="Violin">
+    <div class="notes">
+      <!-- <div class="note1">
+        &#9835; &#9833;
+      </div>
+      <div class="note2">
+        &#9833;
+      </div>
+      <div class="note3">
+        &#9834 &#9833;
+      </div>
+      <div class="note4">
+        &#9834;
+      </div> -->
+    </div>
+    <div class="menutext">
+      <p>Please plug in an electric violin or press number keys</p>
+    </div>
+    <div class="splash-main">
+      <button class="splash-button loading" id="playBtn" hidden onclick="showMainScreen()" autofocus><span>Loading...</span></button>
+    </div>
+
+    </div>
+
+    <div class="loaded" hidden>
+      <div class="background"></div>
+      <canvas id="canvas"></canvas>
+      <svg id="svg"></svg>
+
+      <div class="controls" id="controls">
+        <button class="color-0" id="btn0" data-id="0"><span>1</span></button>
+        <button class="color-1" id="btn1" data-id="1"><span>2</span></button>
+        <button class="color-2" id="btn2" data-id="2"><span>3</span></button>
+        <button class="color-3" id="btn3" data-id="3"><span>4</span></button>
+        <button class="color-4" id="btn4" data-id="4"><span>5</span></button>
+        <button class="color-5" id="btn5" data-id="5"><span>6</span></button>
+        <button class="color-6" id="btn6" data-id="6"><span>7</span></button>
+        <button class="color-7" id="btn7" data-id="7"><span>8</span></button>
+        <button class="settings" onclick="settingsBox.hidden = !settingsBox.hidden" id="btnSettings" hidden>
+         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 20 20"><path fill="none" d="M0 0h20v20H0V0z"/><path d="M15.95 10.78c.03-.25.05-.51.05-.78s-.02-.53-.06-.78l1.69-1.32c.15-.12.19-.34.1-.51l-1.6-2.77c-.1-.18-.31-.24-.49-.18l-1.99.8c-.42-.32-.86-.58-1.35-.78L12 2.34c-.03-.2-.2-.34-.4-.34H8.4c-.2 0-.36.14-.39.34l-.3 2.12c-.49.2-.94.47-1.35.78l-1.99-.8c-.18-.07-.39 0-.49.18l-1.6 2.77c-.1.18-.06.39.1.51l1.69 1.32c-.04.25-.07.52-.07.78s.02.53.06.78L2.37 12.1c-.15.12-.19.34-.1.51l1.6 2.77c.1.18.31.24.49.18l1.99-.8c.42.32.86.58 1.35.78l.3 2.12c.04.2.2.34.4.34h3.2c.2 0 .37-.14.39-.34l.3-2.12c.49-.2.94-.47 1.35-.78l1.99.8c.18.07.39 0 .49-.18l1.6-2.77c.1-.18.06-.39-.1-.51l-1.67-1.32zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/></svg>
+        </button>
+      </div>
+    </div>
+
+  <p id='result' hidden>No pitch detected</p>
+  <p id='status' hidden>Loading Model...</p>
+  <p id='level' hidden>No level detected</p>
+  <script src="js/sketch.js"></script>
+  <!-- <script src="js/helpers.js"></script> -->
+  <!-- <script src="js/script.js"></script> -->
+  <!-- <button id="startbutton" type="button" name="button" onclick="">Start</button> -->
+</body>
+
+</html>
